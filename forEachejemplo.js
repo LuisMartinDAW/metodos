@@ -4,7 +4,7 @@ const students = [
   {
     name: "Jill",
     lastname: "Doe",
-    age:24,
+    age: 24,
     course: "Marketing",
   },
   {
@@ -32,3 +32,29 @@ const students = [
     course: "Finalcial Management",
   }
 ];
+
+/*
+for(let i = 0; i<=students.length; i++){
+  console.log(students[i]);
+}
+*/
+
+/*
+students.forEach((student, index, students) => {
+  console.log(student);
+  console.log(index);
+  console.log(students);
+})
+*/
+/*
+students.forEach((student) => {
+  console.log(`${student.name} ${student.lastname}`);
+
+})
+*/
+const fullNames= [];
+students.forEach((student) => {
+  fullNames.push(`${student.name} ${student.lastname}`);
+});
+
+console.log(fullNames);
