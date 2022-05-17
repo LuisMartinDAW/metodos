@@ -34,8 +34,8 @@ const students = [
 const developers = [
   {
     id:1,
-    name: 'john',
-    skills:['HTML', 'React', 'Javascript', 'Java']
+    name: "John",
+    skills:["HTML", "React", "Javascript", "Java"]
   },
     {
     id:2,
@@ -50,7 +50,7 @@ const developers = [
 ]
 
 const resul = developers.reduce(function(allSkills, student){
-  return [...allSkills, students.skills]
+  return [...allSkills, student.skills]
 }, [])
 
 console.log(resul);
