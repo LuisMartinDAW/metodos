@@ -49,11 +49,7 @@ const developers = [
     }
 ]
 
-const resul = developers.reduce(function(allSkills, student){
-  return [...allSkills, student.skills]
-}, [])
 
-console.log(resul);
 /*Queremos obtener una variable de toda la suma de la edad de los estudiantes, por ejemplo*/
 /*
 let total = 0;
@@ -80,3 +76,31 @@ const result = students.reduce((total, student) => total + student.age, 0);
 
 console.log(result);
 */
+
+/*
+const resul = developers.reduce(function(allSkills, student){
+  return [...allSkills, student.skills]
+}, [])
+*/
+/*
+const resul = developers.reduce(function(allSkills, student){
+  return [...allSkills, ...student.skills]
+}, [])
+*/
+
+/*
+const resul = developers.reduce(function(allSkills, student){
+  return new Set([...allSkills, ...student.skills])
+}, [])
+
+console.log(resul);
+*/
+
+//Vamos a fltrar los datos pero tenemos que convertirlos //en arreglos
+
+const resul = developers.reduce(function(allSkills, student){
+  
+  return Array.from( new Set([...allSkills, ...student.skills]))
+}, [])
+
+console.log(resul);
